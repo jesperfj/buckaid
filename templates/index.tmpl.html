@@ -14,7 +14,7 @@
       <tbody>
         {{ range .files }}
           <tr>
-            <td>{{ .Key }}</td>
+            <td><a href="/get/{{ .Key }}">{{ .Key }}</a></td>
             <td>{{ .Size }}</td>
             <td>{{ .LastModified }}</td>
           </tr>
