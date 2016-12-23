@@ -1,0 +1,7 @@
+{
+  "name": "buckaid",
+  "description": "You must deploy to a team and IN ADVANCE you must configure AWS account for team at https://byodemo-addon.herokuapp.com",
+  "addons": [
+    "byodemo"
+  ]
+}

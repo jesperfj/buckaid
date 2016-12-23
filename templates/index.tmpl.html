@@ -1,0 +1,34 @@
+<html>
+  {{template "purple.tmpl.html"}}
+<body>
+  <div class="purple-box u-padding-Al">
+    <h2>Files in this app's bucket</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Last Modified</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range .files }}
+          <tr>
+            <td>{{ .Key }}</td>
+            <td>{{ .Size }}</td>
+            <td>{{ .LastModified }}</td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+  <div class="purple-box u-padding-Al">
+    <p>Upload files with</p>
+    <p><code>curl -L http://{{.host}}/put/BUCKET_FILENAME --upload-file FILENAME_ON_DISK</code></p>
+    <p>Download files with<p/>
+    <p><code>curl -L -o FILENAME_ON_DISK http://{{.host}}/get/BUCKET_FILENAME</code></p>
+    <p>List files with<p/>
+    <p><code>curl http://{{.host}}/files</code></p>
+  </div>
+</body>
+</html>
