@@ -73,7 +73,7 @@ func main() {
 	})
 
 	// For downloading a file with curl, use:
-	// curl -L -o filenameondisk http://myapp.mydomain/put/filenameinbucket
+	// curl -L -o filenameondisk http://myapp.mydomain/get/filenameinbucket
 	router.GET("/get/:key", func(c *gin.Context) {
 		key := c.Param("key")
 		req, _ := s3svc.GetObjectRequest(&s3.GetObjectInput{
